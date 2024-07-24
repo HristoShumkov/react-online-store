@@ -1,0 +1,18 @@
+#category-circle {
+    background: linear-gradient(135deg, #b81a1a, #ff6347);
+    border-radius: 50%;
+    height: 200px;
+    width: 200px;
+    min-height: 100px;
+    min-width: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+#category-circle:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
