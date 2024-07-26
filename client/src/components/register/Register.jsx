@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom'
 import './register.css'
 
 
-const Register = () => {
+export default function Register() {
 
   return (
     <div className='flex-center'>
@@ -37,5 +37,3 @@ const Register = () => {
     </div>
   )
 }
-
-export default Register

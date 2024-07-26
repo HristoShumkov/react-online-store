@@ -1,7 +1,7 @@
 import Category from "./category/Category";
 import "./home.css";
 
-const Home = () => {
+export default function Home() {
 
     return (
         <>
@@ -26,5 +26,3 @@ const Home = () => {
     )
 
 }
-
-export default Home

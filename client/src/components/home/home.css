@@ -6,7 +6,7 @@ body {
 }
 
 #hero {
-    background: url('https://cms.nvctrading.com/app/uploads/2017/12/online-shopping.jpg') no-repeat center center;
+    background: url('/online-shopping.jpg') no-repeat center center;
     background-size: cover;
     color: white;
     text-align: center;

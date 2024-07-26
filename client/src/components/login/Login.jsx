@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import "./login.css";
 
-const Login = () => {
+export default function Login() {
 
     return (
         <div className='flex-center'>
@@ -25,5 +25,3 @@ const Login = () => {
     )
 
 }
-
-export default Login

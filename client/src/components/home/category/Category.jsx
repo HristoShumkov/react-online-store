@@ -1,7 +1,7 @@
 import { FaComputer } from "react-icons/fa6"
 import "./category.css"
 
-const Category = () => {
+export default function Category() {
     return (
         <>
             <a href="#">
@@ -16,5 +16,3 @@ const Category = () => {
         </>
     )
 }
-
-export default Category
