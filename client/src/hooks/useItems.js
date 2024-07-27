@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import itemAPI from "../api/itemAPI";
 
-export default function useGetAllItems() {
+export function useGetAllItems() {
     const [items, setItems] = useState([]);
     useEffect(() => {
         (async () => {
@@ -14,7 +14,7 @@ export default function useGetAllItems() {
     return [items, setItems]
 }
 
-export default function useGetSingleItem(itemId) {
+export function useGetSingleItem(itemId) {
     const [item, setItem] = useState({});
 
     useEffect(() => {

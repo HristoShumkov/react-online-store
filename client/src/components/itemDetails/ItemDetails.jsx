@@ -1,6 +1,6 @@
 import { useParams } from "react-router-dom"
 
-import useGetSingleItem from "../../hooks/useItems";
+import { useGetSingleItem } from "../../hooks/useItems";
 
 export default function ItemDetails() {
     const { itemId } = useParams();
@@ -8,7 +8,7 @@ export default function ItemDetails() {
 
     return (
         <>
-            <img src={item.imageUrl}/>
+            <img src={item.imageUrl} />
             <h1>{item.title}</h1>
             <p>{item.category}</p>
             <p>{item.price}$</p>
