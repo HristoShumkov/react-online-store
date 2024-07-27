@@ -10,6 +10,9 @@ const getAllItems = async () => {
     return items;
 }
 
+const getSingleItem = async (itemId) => requester.get(`${BASE_URL}/${itemId}`)
+
 export default {
-    getAllItems
+    getAllItems,
+    getSingleItem
 }
