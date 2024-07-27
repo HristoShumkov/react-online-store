@@ -1,12 +1,12 @@
 import "./itemPreview.css";
 
-export default function ItemPreview() {
+export default function ItemPreview({title, price, image}) {
 
     return (
         <div id="item-container">
-            <img src="https://patchandbagel.com/cdn/shop/files/c3f753d5-5f3e-412e-a6cf-d1dfc9687f59_48b6dd3b-ca3d-43e6-b84b-9b749d29a7a0.jpg?v=1702813901&width=1445" id="item-img" />
-            <p id="item-name">Capybara plushie - very nice very expensive material high quality</p>
-            <p id="item-price">$59</p>
+            <img src={image} id="item-img" />
+            <p id="item-name">{title}</p>
+            <p id="item-price">${price}</p>
         </div>
     )
 }

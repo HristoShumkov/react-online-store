@@ -36,16 +36,20 @@ async function requester(method, url, data) {
             throw result.message;
         }
 
-
         return result;
     } catch (err) {
         console.error(err.message);
     }
 }
 
-export const request = {
-    get: () => requester.bind(null, "GET"),
-    post: () => requester.bind(null, "POST"),
-    put: () => requester.bind(null, "PUT"),
-    del: () => requester.bind(null, "DELETE"),
+const get = requester.bind(null, "GET");
+const post = requester.bind(null, "POST");
+const put = requester.bind(null, "PUT");
+const del = requester.bind(null, "DELETE");
+
+export default {
+    get,
+    post,
+    put,
+    del
 }
