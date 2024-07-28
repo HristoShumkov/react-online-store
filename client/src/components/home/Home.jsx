@@ -1,3 +1,4 @@
+import { FaComputer, FaDumbbell, FaFilm, FaHouse, FaShirt } from "react-icons/fa6";
 import Category from "./category/Category";
 import "./home.css";
 
@@ -15,11 +16,11 @@ export default function Home() {
             <section id="shop-now">
                 <h1>Shop By Category</h1>
                 <section id="category-container">
-                    <Category />
-                    <Category />
-                    <Category />
-                    <Category />
-                    <Category />
+                    <Category icon={<FaShirt />}/>
+                    <Category icon={<FaComputer />}/>
+                    <Category icon={<FaFilm />} />
+                    <Category icon={<FaHouse />}/>
+                    <Category icon={<FaDumbbell />}/>
                 </section>
             </section>
         </>
