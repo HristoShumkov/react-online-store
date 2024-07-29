@@ -29,3 +29,9 @@ export function useGetSingleItem(itemId) {
 
     return [item, setItem];
 }
+
+export function usePostItem() {
+    const postItemHandler = (itemData) => itemAPI.postItem(itemData);
+
+    return postItemHandler;
+}

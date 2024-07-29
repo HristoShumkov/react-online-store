@@ -1,6 +1,6 @@
 import requester from "./requester";
 
-const BASE_URL = "http://localhost:3030/jsonstore/items";
+const BASE_URL = "http://localhost:3030/data/items";
 
 const getAllItems = async () => {
     const response = await requester.get(BASE_URL);
@@ -12,7 +12,11 @@ const getAllItems = async () => {
 
 const getSingleItem = async (itemId) => requester.get(`${BASE_URL}/${itemId}`)
 
+
+const postItem = (itemData) => requester.post(BASE_URL, itemData);
+
 export default {
     getAllItems,
-    getSingleItem
+    getSingleItem,
+    postItem
 }

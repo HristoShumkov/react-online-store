@@ -1,9 +1,10 @@
 import { Link } from "react-router-dom";
 import "./navbar.css";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { AuthContext } from "../../contexts/AuthContext";
 
 export default function Navbar() {
+  const [toggle, setToggle] = useState(false);
   const { username, profilePic, isAuthenticated } = useContext(AuthContext);
 
   return (
@@ -18,15 +19,16 @@ export default function Navbar() {
           <div className='button-secondary' id='user-button' onClick={() => setToggle(!toggle)}>
             <p>{username}</p>
             <img src={profilePic} alt='pfp' className='pfp-icon' />
-            {/* {(toggle && isAuthenticated) && (
+            {(toggle && isAuthenticated) && (
               <ul className='option-container'>
-                <Link to='/user' style={{ textDecoration: 'none' }}><li className='button-secondary'>User details</li></Link>
-                <Link to='/watchlist' style={{ textDecoration: 'none' }}><li className='button-secondary'>My Watchlist</li></Link>
-                <Link to='/myreviews' style={{ textDecoration: 'none' }}><li className='button-secondary'>Reviewed Movies</li></Link>
+                <Link to='/user' style={{ textDecoration: 'none' }}><li className='button-secondary'>My Profile</li></Link>
+                <Link to='/watchlist' style={{ textDecoration: 'none' }}><li className='button-secondary'>My Cart</li></Link>
+                <Link to='/sell-item' style={{ textDecoration: 'none' }}><li className='button-secondary'>Sell Item</li></Link>
                 <div className='divider'></div>
-                <li className='button-secondary' onClick={onLogout}>Logout</li>
+                <li className='button-secondary'>Logout</li>
+                {/* <li className='button-secondary' onClick={onLogout}>Logout</li> */}
               </ul>
-            )}  */}
+            )} 
       </div>
       )
         }

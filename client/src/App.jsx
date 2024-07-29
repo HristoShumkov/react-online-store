@@ -49,7 +49,7 @@ function App() {
           <Route path="/user" element={<UserDetails />} />
           <Route path="/saved" element={<SavedItems />} />
           <Route path="/bought" element={<BoughtItems />} />
-          <Route path="/sell" element={<SellItem />} />
+          <Route path="/sell-item" element={<SellItem />} />
           <Route path="/edit" element={<EditItem />} />
           <Route path="*" element={<NotFound />} />
         </Routes>

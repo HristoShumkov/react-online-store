@@ -55,7 +55,7 @@ export default function Register() {
           <div className='input-field'>
             <input type='text' id='profile-pic' name='profilePic' value={values.profilePic} onChange={changeHandler} />
           </div>
-          <input type='submit' value='Sign up' className='button-main' id='button-signup' />
+          <input type='submit' value='Sign up' className='button-main button-submit' />
         </form>
         <div className='divider'></div>
         <p style={{ textAlign: 'center' }}>Already have an account? <Link to='/login' id='to-login'>Sign in.</Link></p>

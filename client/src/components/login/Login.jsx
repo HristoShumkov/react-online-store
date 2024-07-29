@@ -2,7 +2,6 @@ import { Link, useNavigate } from "react-router-dom";
 
 import { useLogin } from "../../hooks/useAuth";
 
-import "./login.css";
 import { useForm } from "../../hooks/useForm";
 const initialValues = {
   email: "",
@@ -39,10 +38,10 @@ export default function Login() {
           <div className='input-field'>
             <input type='password' id='password' name='password' value={values.password} onChange={changeHandler} />
           </div>
-          <input type='submit' value='Login' className='button-main' id='button-login' />
+          <input type='submit' value='Login' className='button-main button-submit' />
         </form>
         <div className='divider'></div>
-        <Link to='/register'><button className='button-secondary' id='button-to-register'>Create New Account</button></Link>
+        <Link to='/register'><button className='button-secondary button-submit'>Create New Account</button></Link>
       </div>
     </div>
   )
