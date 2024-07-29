@@ -4,7 +4,7 @@ import "./category.css"
 export default function Category({icon}) {
     return (
         <>
-            <Link to="/catalog">
+            <Link to="/items">
                 <div id="category-circle">
                     {icon}
                 </div>

@@ -1,14 +1,14 @@
 import { useGetAllItems } from "../../hooks/useItems";
 import ItemPreview from "../itemPreview/ItemPreview";
 
-import "./catalog.css";
+import "./itemCatalog.css";
 
-export default function Catalog() {
+export default function ItemCatalog() {
     const [items] = useGetAllItems();
 
     return (
         <div id="catalog-container">
-            <h1>Catalog</h1>
+            <h1>Items</h1>
             <div id="items-list">
                 {items.length
                     ? items.map(item => (

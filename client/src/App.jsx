@@ -5,7 +5,7 @@ import Navbar from './components/navbar/Navbar';
 import Home from './components/home/Home';
 import Login from './components/login/Login';
 import Register from './components/register/Register';
-import Catalog from './components/catalog/Catalog';
+import ItemCatalog from './components/catalog/ItemCatalog';
 import ItemDetails from './components/itemDetails/ItemDetails';
 import UserDetails from './components/userDetails/UserDetails';
 import SavedItems from './components/savedItems/SavedItems';
@@ -44,13 +44,13 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
-          <Route path="/catalog" element={<Catalog />} />
+          <Route path="/items" element={<ItemCatalog />} />
           <Route path="/items/:itemId" element={<ItemDetails />} />
           <Route path="/user" element={<UserDetails />} />
           <Route path="/saved" element={<SavedItems />} />
           <Route path="/bought" element={<BoughtItems />} />
           <Route path="/sell-item" element={<SellItem />} />
-          <Route path="/edit" element={<EditItem />} />
+          <Route path="/edit/:itemId" element={<EditItem />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </div>

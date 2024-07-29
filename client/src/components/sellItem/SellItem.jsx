@@ -20,7 +20,7 @@ export default function SellItem() {
         try {
             await postItem(values);
 
-            navigate("/catalog"); 1
+            navigate("/items"); 1
         } catch (err) {
             console.error(err.message)
         }

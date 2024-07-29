@@ -11,7 +11,7 @@ export default function Navbar() {
     <nav>
       <Link to='/'><img src="/buystuff-logo.png" id="logo" alt="buyStuff Logo" /></Link>
       <div className='align-center'>
-        <Link to='/catalog'><button className="button-secondary">Catalog</button></Link>
+        <Link to='/items'><button className="button-secondary">Shop</button></Link>
         {!isAuthenticated && (
         <Link to="/login"><button className="button-main">Sign in</button></Link>
         )}
