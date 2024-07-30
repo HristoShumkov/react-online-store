@@ -8,6 +8,9 @@ const login = (email, password) => requester.post(`${BASE_URL}/login`, {email, p
 
 const logout = () => requester.get(`${BASE_URL}/logout`);
 
+const getUser = () => {}
+
+
 export default {
     login,
     register,

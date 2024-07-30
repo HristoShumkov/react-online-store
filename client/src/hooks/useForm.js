@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export function useForm(initialValues, submitCallback) {
     const [values, setValues] = useState(initialValues);
@@ -16,10 +16,18 @@ export function useForm(initialValues, submitCallback) {
         submitCallback(values);
     }
 
+    const populateForm = (data) => {
+        useEffect(() => {
+            setValues({ ...data })
+        }, [data])
+    }
+    
+
     return {
         values,
         changeHandler,
         submitHandler,
-        setValues
+        setValues,
+        populateForm
     };
 }

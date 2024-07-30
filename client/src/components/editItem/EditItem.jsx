@@ -1,4 +1,4 @@
-import { useNavigate, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import { useGetSingleItem, useUpdateItem } from "../../hooks/useItems";
 import { useForm } from "../../hooks/useForm";
 import { useEffect } from "react";
@@ -21,11 +21,9 @@ export default function EditItem() {
         }
     }
 
-    const { values, changeHandler, submitHandler, setValues } = useForm(item, updateItemHandler);
+    const { values, changeHandler, submitHandler, populateForm } = useForm(item, updateItemHandler);
 
-    useEffect(() => {
-        setValues({...item})
-    }, [item])
+    populateForm(item);
 
     return (
         <div className="flex-center">
@@ -59,7 +57,10 @@ export default function EditItem() {
                     <div className="input-field">
                         <input type="text" id="image-url" name="imageUrl" value={values.imageUrl} onChange={changeHandler} />
                     </div>
-                    <input type="submit" value="Submit" className="button-main button-submit" />
+                    <div id="button-container" style={{display: "flex"}}>
+                        <input type="submit" value="Submit" className="button-main button-submit" />
+                        <Link to={`/items/${itemId}`} className="button-secondary button-submit">Cancel</Link>
+                    </div>
                 </form>
             </div>
         </div>

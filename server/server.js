@@ -588,7 +588,7 @@
                 props.map(prop => {
                     const [propName, relationTokens] = prop.split('=');
                     const [idSource, collection] = relationTokens.split(':');
-                    console.log(`Loading related records from "${collection}" into "${propName}", joined on "_id"="${idSource}"`);
+                    console.log(`Loading related records from "${collection}" into "${propName}", joined on _id"=":idSource}"`);
                     const storageSource = collection == 'users' ? context.protectedStorage : context.storage;
                     responseData = Array.isArray(responseData) ? responseData.map(transform) : transform(responseData);
 
@@ -1329,7 +1329,7 @@
     			username: "George",
     			hashedPassword: "83313014ed3e2391aa1332615d2f053cf5c1bfe05ca1cbcb5582443822df6eb1"
     		},
-    		"60f0cf0b-34b0-4abd-9769-8c42f830dffc": {
+    		"296df0dc-3819-4e74-97f0-981dea707baa": {
     			email: "admin@abv.bg",
     			username: "Admin",
     			hashedPassword: "fac7060c3e17e6f151f247eacb2cd5ae80b8c36aedb8764e18a41bbdc16aa302"
@@ -1339,6 +1339,211 @@
     	}
     };
     var seedData = {
+        items: {
+            "2b31a795-4815-4109-a7c4-50db2d69324b": {
+                _ownerId: "296df0dc-3819-4e74-97f0-981dea707baa",
+                title: "Godzilla 1962, Bandai Spirits S.H.Monsterarts Action Figure",
+                price: "119.99",
+                category: "Entertainment",
+                "description": "Highly detailed Godzilla action figure from the classic 1962 film \"King Kong vs Godzilla\". Includes light beam effect parts and stand.",
+                "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ9Fwj_ZK3xQslEDIMOvCsrr2_vQoQ5pTpJfSwCDe9IGxhcfVIbcfk76RBjQSUkLoRf31w&usqp=CAU",
+                _createdOn: 1722247953725,
+                _id: "2b31a795-4815-4109-a7c4-50db2d69324b"
+            },
+            "9b46b5fc-dbe8-40c2-bbb8-91dd1314b573": {
+                _ownerId: "296df0dc-3819-4e74-97f0-981dea707baa",
+                title: "Soft Capybara Plush Doll",
+                price: "19.99",
+                category: "Entertainment",
+                description: "The cute capybara plush pillow with wearable toast headwear can not only be used as a pillow, waist pillow, nap pillow, and back pillow, but also as a decoration for bedrooms, living rooms, sofas, cars, offices, and more",
+                imageUrl: "https://m.media-amazon.com/images/I/81HiC6X2WYL._AC_SX679_.jpg",
+                _createdOn: 1722340805062,
+                _id: "9b46b5fc-dbe8-40c2-bbb8-91dd1314b573"
+            },
+            "2e0d51d4-2351-45a7-af81-f7b330db9b9d": {
+                _ownerId: "296df0dc-3819-4e74-97f0-981dea707baa",
+                title: "GODZILLA BOX - THE SHOWA FILMS 1954-1975 (CRITERION COLLECTION) [Blu-ray] [2019]",
+                price: "157.63",
+                category: "Entertainment",
+                "description": "High-definition digital transfers of all fifteen Godzilla films made between 1954 and 1975, released together for the first time, with uncompressed monaural soundtracks. ",
+                "imageUrl": "https://s3.amazonaws.com/criterion-production/product_images/1954-30071b542ccc2695acf6efd89338b69f/cwdyHIkniaV8zGU6AiJ3VV9sROxOTd_original.jpg",
+                _createdOn: 1722341325440,
+                _id: "2e0d51d4-2351-45a7-af81-f7b330db9b9d"
+            },
+            "faaaa7e4-9125-4220-bdfd-602bde9212bc": {
+                _ownerId: "296df0dc-3819-4e74-97f0-981dea707baa",
+                title: "The Boys Vol. 1",
+                price: "19.99",
+                category: "Entertainment",
+                "description": " In a world where costumed heroes soar through the sky and masked vigilantes prowl the night, someone's got to make sure the \"supes\" don't get out of line. And someone will!  Billy Butcher, Wee Hughie, Mother's Milk, The Frenchman, and The Female are The Boys: A CIA-backed team of very dangerous people, each one dedicated to the struggle against the most dangerous force on Earth - superpower! ",
+                "imageUrl": "https://m.media-amazon.com/images/I/8176roM-19L._SL1500_.jpg",
+                _createdOn: 1722343046018,
+                _id: "faaaa7e4-9125-4220-bdfd-602bde9212bc"
+            },
+            "c366a40f-9a95-447a-96a9-fce8e4456f7f": {
+                _ownerId: "296df0dc-3819-4e74-97f0-981dea707baa",
+                title: "Adidas Superstar shoes WHITE",
+                price: "109.99",
+                category: "Clothing",
+                "description": "Built for basketball, adopted by hip hop and skate, the classic leather Superstar changed the game the moment it stepped off the court. The serrated 3-Stripes mark, iconic shell style toe, and box logo makes this one of the true Originals.",
+                "imageUrl": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/ff2e419f1eda4ebab23faad6009a3a9e_9366/Superstar_Shoes_White_EG4958.jpg",
+                _createdOn: 1722343157671,
+                _id: "c366a40f-9a95-447a-96a9-fce8e4456f7f"
+            },
+            "0b2cbc62-a5c4-41e1-90dd-210872075084": {
+                _ownerId: "296df0dc-3819-4e74-97f0-981dea707baa",
+                title: "Pink Floyd Loose Fit T-shirt",
+                price: "18.99",
+                category: "",
+                "description": "T-shirt in midweight, printed cotton jersey with a round, rib-trimmed neckline, dropped shoulders and a straight-cut hem. Loose fit for a generous but not oversized silhouette.",
+                "imageUrl": "https://image.hm.com/assets/hm/8d/c7/8dc7b1950c21ba26e6f6605af9d4742cc87dd586.jpg?imwidth=657",
+                _createdOn: 1722343398233,
+                _id: "0b2cbc62-a5c4-41e1-90dd-210872075084"
+            },
+            "7641f356-b53f-49e0-900e-be3c604b1e79": {
+                _ownerId: "296df0dc-3819-4e74-97f0-981dea707baa",
+                title: "Cool hat",
+                price: "9.99",
+                category: "Clothing",
+                "description": "Cool hat very nice",
+                "imageUrl": "https://image.hm.com/assets/hm/62/d6/62d6b7929d01b66db2c56aed4b7ce1665331a6f4.jpg?imwidth=2160",
+                _createdOn: 1722344042839,
+                _id: "7641f356-b53f-49e0-900e-be3c604b1e79",
+                "_updatedOn": 1722344068982
+            },
+            "7f0fc32f-695c-4dca-ac13-80c85cdd89a0": {
+                _ownerId: "296df0dc-3819-4e74-97f0-981dea707baa",
+                title: "Wide High Jeans",
+                price: "24.99",
+                category: "Clothing",
+                "description": "5-pocket jeans in washed cotton denim with a high waist, zip fly and button and wide, straight legs.",
+                "imageUrl": "https://image.hm.com/assets/hm/9d/0c/9d0c10ebec21fe1c93d728ce1af29d862edbbb25.jpg?imwidth=820",
+                _createdOn: 1722344158915,
+                _id: "7f0fc32f-695c-4dca-ac13-80c85cdd89a0"
+            },
+            "e2d15016-7d6c-41da-94e7-4f66ff017324": {
+                _ownerId: "296df0dc-3819-4e74-97f0-981dea707baa",
+                title: "iPhone 4S 16GB Unlocked White",
+                price: "40",
+                category: "Electronics",
+                "description": "Full working , no damage .Very GOOD condition",
+                "imageUrl": "https://i.ebayimg.com/images/g/jOMAAOSwvoZki9QL/s-l960.webp",
+                _createdOn: 1722344341316,
+                _id: "e2d15016-7d6c-41da-94e7-4f66ff017324"
+            },
+            "b8b30142-acbb-404a-b47f-925f30cb78ce": {
+                _ownerId: "296df0dc-3819-4e74-97f0-981dea707baa",
+                title: "MSI Gaming GeForce RTX 4060 8GB GDRR6",
+                price: "299.99",
+                category: "Electronics",
+                "description": "Chipset: GeForce RTX 4060 Video Memory: 8GB GDDR6 Memory Interface: 128-bit Output: DisplayPort x 3 (v1.4a) / HDMI 2.1 x 1 Digital maximum resolution: 7680 x 4320",
+                "imageUrl": "https://i.ebayimg.com/images/g/Ub0AAOSwOHhmDwJL/s-l960.webp",
+                _createdOn: 1722349909186,
+                _id: "b8b30142-acbb-404a-b47f-925f30cb78ce",
+                "_updatedOn": 1722349923992
+            },
+            "f05e4391-6ba6-43b7-a461-753c1413788c": {
+                _ownerId: "296df0dc-3819-4e74-97f0-981dea707baa",
+                title: "Sony KV-30HS420 30-Inch FD Trinitron WEGA 720p Widescreen CRT TV With HDMI",
+                price: "500.00",
+                category: "Electronics",
+                "description": "Enhance your viewing experience with this Sony KV-30HS420 30-Inch FD Trinitron Widescreen WEGA TV. With a maximum resolution of 720p (HD), this TV provides crystal-clear visuals. The flat screen design ensures a comfortable viewing angle, while the CRT display technology enhances the overall quality of the image.  The audio/video inputs include HDMI, allowing you to easily connect to your favorite devices. Get ready to enjoy high-quality video and audio with this Sony KV-30HS420 TV.",
+                "imageUrl": "https://i.ebayimg.com/images/g/VrcAAOSwOcBmp~X6/s-l960.webp",
+                _createdOn: 1722350050654,
+                _id: "f05e4391-6ba6-43b7-a461-753c1413788c"
+            },
+            "c36b8c28-b906-4461-9b86-3db9cd6b9a81": {
+                _ownerId: "296df0dc-3819-4e74-97f0-981dea707baa",
+                title: "Lenovo ThinkPad T480 14\" Intel Core i5-8250U 1.6Ghz 8GB RAM 256GB SSD",
+                price: "139.99",
+                category: "Electronics",
+                "description": "Laptop has been reset and fully tested, everything works just fine.  Internal battery holds some charge, above 50% capacity Running Windows 10 Pro! ",
+                "imageUrl": "https://i.ebayimg.com/images/g/RJ4AAOSwCG5mnoXA/s-l1600.webp",
+                _createdOn: 1722350312957,
+                _id: "c36b8c28-b906-4461-9b86-3db9cd6b9a81"
+            },
+            "e5143392-c9f1-4475-9fdc-e86dd8347e8f": {
+                _ownerId: "296df0dc-3819-4e74-97f0-981dea707baa",
+                title: "Laptop has been reset and fully tested, everything works just fine.  Internal battery holds some charge, above 50% capacity Running Windows 10 Pro! ",
+                price: "10.99",
+                category: "Home & Garden",
+                "description": "This RGB Led strip lights kit can change colors and speed automatically and periodically. It has not only RGB(Red, Green, Blue), 20 multicolored options, but also has DIY selection to create your great led mood lighting.",
+                "imageUrl": "https://i.ebayimg.com/images/g/rWYAAOSwa7ZkrMBs/s-l1600.webp",
+                _createdOn: 1722354071845,
+                _id: "e5143392-c9f1-4475-9fdc-e86dd8347e8f"
+            },
+            "30420b14-ae7b-41de-a287-b9828fd9c6cf": {
+                _ownerId: "296df0dc-3819-4e74-97f0-981dea707baa",
+                title: "55\" 3 in 1 Convertible Sleeper Sofa Bed Velvet Loveseat Pull Out Sofa Bed Couch",
+                price: "275.49",
+                category: "Home & Garden",
+                "description": "Introducing our two-seater sofa bed, a multifunctional piece that seamlessly combines comfort and style in a compact design. Measuring 55 inches in width, 38 inches in depth, and 30.5 inches in height, this sofa bed is the perfect addition to any living space, providing both seating and sleeping options for your convenience.",
+                "imageUrl": "https://i.ebayimg.com/images/g/WDMAAOSw-sFmamkA/s-l1600.webp",
+                _createdOn: 1722354122397,
+                _id: "30420b14-ae7b-41de-a287-b9828fd9c6cf"
+            },
+            "d28396fd-17b3-440d-b0e8-76833554f7c1": {
+                _ownerId: "296df0dc-3819-4e74-97f0-981dea707baa",
+                title: "10'x15' Canopy Heavy Duty Commercial Tent Outdoor Garden Gazebo with 4 Sidewalls",
+                price: "199.99",
+                category: "Home & Garden",
+                "description": "Features: Premium Grade Frame: Special thicken structure, commercial grade 1.77'' (45 mm) hexagon shaped legs with powder coated finishing. Strong, Commercial and Rust Resistance. Waterproof, Fireproof, UV Protection, Windproof: 420D PU polyester, block 99.99% UV rays. Stitching lines are all seam sealed to prevent water penetrate from seams. Velcro straps on each valance to keep the canopy stick on the frame. Stable in the wind. Easy to Set Up: No tools required, could be set up by 1 or 2 people. The latest thumb button release levers technology, makes set-up and close real safe, comfortable and reliable.",
+                "imageUrl": "https://i.ebayimg.com/images/g/sNYAAOSwdBJmJ1CX/s-l1600.webp",
+                _createdOn: 1722354253206,
+                _id: "d28396fd-17b3-440d-b0e8-76833554f7c1"
+            },
+            "0f7501cf-50ab-4986-8348-a7553206cf6b": {
+                _ownerId: "296df0dc-3819-4e74-97f0-981dea707baa",
+                title: "Rustic Entry Door 36x96 Withh Sidelites & Arched Transom",
+                price: "10 689.00",
+                category: "Home & Garden",
+                "description": "Custom Made In The USA! (1) 36\" X 96\" Rustic Style Entry Door with (4 lite) sidelights & top arched transom",
+                "imageUrl": "https://i.ebayimg.com/images/g/h20AAOSwwOVl6fUo/s-l960.webp",
+                _createdOn: 1722354411160,
+                _id: "0f7501cf-50ab-4986-8348-a7553206cf6b"
+            },
+            "0ad4f2f4-8a4f-4316-97de-a7173b71b980": {
+                _ownerId: "296df0dc-3819-4e74-97f0-981dea707baa",
+                title: "Bowflex SelectTech 552 Adjustable Dumbbells",
+                price: "429",
+                category: "Sports",
+                "description": "With just the turn of a dial you can automatically change your resistance from 5 lbs. all the way up to 52.5 lbs of weight. No more picking up 30 different dumbbells to get the results you want, this adjustable dumbbell replaces 15 sets of weights! All you need is a SelectTech 552 Dumbbell to transform your body for good.",
+                "imageUrl": "https://m.media-amazon.com/images/I/61jau6tusOL._AC_SL1500_.jpg",
+                _createdOn: 1722354636358,
+                _id: "0ad4f2f4-8a4f-4316-97de-a7173b71b980",
+                "_updatedOn": 1722354646532
+            },
+            "189b5522-7a90-43d5-b369-ed427edfda7e": {
+                _ownerId: "296df0dc-3819-4e74-97f0-981dea707baa",
+                title: "CAP Barbell Rubber Olympic Bumper Plate",
+                price: "52.99",
+                category: "Sports",
+                "description": "The CAP Barbell Best Bumper Plate Set offers protection for both the barbell and the bumper plates with its sound construction. The steel insert hubs reinforce the holes and protect the bar at the same time. This Olympic weight plate set can only be used with Olympic bars (with a 2-inch sleeve diameter). Each weight is made from solid cast iron and coated in virgin and recycled rubber. Adding weights to any fitness routine helps to increase muscle mass while burning more calories and reducing body fat. Add these Olympic bumper plates to your home gym and start experiencing the benefits they can offer to your fitness routine. 30-day manufacturer .",
+                "imageUrl": "https://m.media-amazon.com/images/I/71uqSZ6XuhL._AC_SL1500_.jpg",
+                _createdOn: 1722354864331,
+                _id: "189b5522-7a90-43d5-b369-ed427edfda7e"
+            },
+            "3428ee24-d2db-4937-88b4-9ae1660014f4": {
+                _ownerId: "296df0dc-3819-4e74-97f0-981dea707baa",
+                title: "29 Inch Bmx Bike hyper jet fuel",
+                price: "300.00",
+                category: "",
+                "description": "Theres a few scratches and no front brakes but i dont ride it anymore its basically brand new has a little scratch on the grip lock and on the seat other them that nothing else is wrong with it i have only had it for about a month (i still have the front brake let me know if you want it i will give it to you)",
+                "imageUrl": "https://i.ebayimg.com/images/g/FiAAAOSwE5JmprqE/s-l1600.webp",
+                _createdOn: 1722354935829,
+                _id: "3428ee24-d2db-4937-88b4-9ae1660014f4"
+            },
+            "50902942-aa39-4938-b9ec-69fdffcf2cf6": {
+                _ownerId: "296df0dc-3819-4e74-97f0-981dea707baa",
+                title: "Harbinger Padded Cotton Lifting Straps",
+                price: "24.99",
+                category: "Sports",
+                "description": "• Extended length strap for stronger wrap and grip • Neotek pad cushions wrist for heavy lifts • Additional 1.5-inch width increases contact with surfaces and improves grip • Heavy duty stitching increases durability • Merrowed end tabs prevent fraying",
+                "imageUrl": "https://www.sportspower.com.au/cdn/shop/products/HARB_21300_Product_PaddedCottonLiftingStraps_MV_1000x1000_11f758d8-2517-4965-b268-8bf1f656177d.jpg?v=1643074575",
+                _createdOn: 1722356458347,
+                _id: "50902942-aa39-4938-b9ec-69fdffcf2cf6"
+            }
+        },
     	recipes: {
     		"3987279d-0ad4-4afb-8ca9-5b256ae3b298": {
     			_ownerId: "35c62d76-8152-4626-8712-eeb96381bea8",
@@ -1629,14 +1834,14 @@
     			_updatedOn: 1616237235713
     		},
     		"280b4a1a-d0f3-4639-aa54-6d9158365152": {
-    			_ownerId: "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
+    			_ownerId: "296df0dc-3819-4e74-97f0-981dea707baa",
     			teamId: "dc888b1a-400f-47f3-9619-07607966feb8",
     			status: "member",
     			_createdOn: 1616237257265,
     			_updatedOn: 1616237278248
     		},
     		"e797fa57-bf0a-4749-8028-72dba715e5f8": {
-    			_ownerId: "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
+    			_ownerId: "296df0dc-3819-4e74-97f0-981dea707baa",
     			teamId: "34a1cab1-81f1-47e5-aec3-ab6c9810efe1",
     			status: "member",
     			_createdOn: 1616237272948,
