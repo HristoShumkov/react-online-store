@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import itemAPI from "../api/itemAPI";
 import { useNavigate } from "react-router-dom";
+import { useAuthContext } from "../contexts/AuthContext";
 
 export function useGetAllItems() {
     const [items, setItems] = useState([]);
@@ -26,7 +27,7 @@ export function useGetSingleItem(itemId) {
         }
         )()
     }
-    , [itemId])
+        , [itemId])
 
     return [item, setItem];
 }
@@ -57,4 +58,60 @@ export function useDeleteItem() {
     }
 
     return deleteItemHandler;
+}
+
+export const useIsInCart = (itemId) => {
+    const [inCart, setInCart] = useState(false);
+    const { userId } = useAuthContext();
+
+    
+    useEffect(() => {
+            const checkItemInCart = async (itemId) => {
+                const result = await itemAPI.getSingleCartItem(userId, itemId);
+
+                if (result.length) {
+                    setInCart(true);
+                }
+            }
+
+            checkItemInCart(itemId)
+    }, [inCart])
+
+    return [inCart, setInCart];
+}
+
+export function useGetCartItems() {
+
+    const [cartItems, setCartItems] = useState([]);
+    const { userId } = useAuthContext();
+
+    useEffect(() => {
+        (async () => {
+            const itemData = await itemAPI.getCartItems(userId);
+
+            console.log(itemData)
+
+            const cartItems = []
+
+            for (const item of itemData) {
+                const cartItem = await itemAPI.getSingleItem(item.item)
+
+                cartItems.push(cartItem)
+            }
+
+            setCartItems(cartItems);
+        })();
+    }, []);
+
+    return [cartItems, setCartItems]
+}
+
+export function useAddToCart() {
+    const { userId } = useAuthContext();
+
+    const addToCartHandler = async (itemId) => {
+        await itemAPI.addToCart(userId, itemId);
+    }
+
+    return addToCartHandler;
 }

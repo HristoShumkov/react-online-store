@@ -1,0 +1,19 @@
+#user-cart-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  #view-more {
+    text-decoration: none;
+    font-size: 1.2rem;
+  }
+
+  #view-more:hover {
+    color: #ff6347
+  }
+
+  #user-cart {
+    display: flex;
+    overflow-x: scroll;
+  }

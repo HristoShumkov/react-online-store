@@ -8,7 +8,7 @@ import Logout from './components/logout/Logout';
 import ItemCatalog from './components/itemCatalog/ItemCatalog';
 import ItemDetails from './components/itemDetails/ItemDetails';
 import UserDetails from './components/userDetails/UserDetails';
-import SavedItems from './components/savedItems/SavedItems';
+import UserCart from './components/userCart/UserCart';
 import NotFound from './components/404NotFound/404NotFound';
 import BoughtItems from './components/boughtItems/BoughtItems';
 import SellItem from './components/sellItem/SellItem';
@@ -31,7 +31,7 @@ function App() {
           <Route path="/items" element={<ItemCatalog />} />
           <Route path="/items/:itemId" element={<ItemDetails />} />
           <Route path="/user" element={<UserDetails />} />
-          <Route path="/saved" element={<SavedItems />} />
+          <Route path="/my-cart" element={<UserCart />} />
           <Route path="/bought" element={<BoughtItems />} />
           <Route path="/sell-item" element={<SellItem />} />
           <Route path="/edit/:itemId" element={<EditItem />} />

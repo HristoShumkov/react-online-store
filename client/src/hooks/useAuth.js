@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import authAPI from "../api/authAPI";
 import { useAuthContext } from "../contexts/AuthContext";
 
@@ -22,6 +23,8 @@ export const useRegister = () => {
         const { password: _, ...authData } = await authAPI.register(email, username, password, profilePic);
 
         changeAuthState(authData);
+        
+        await authAPI.postPublicUserRecord(authData);
 
         return authData;
     }
@@ -39,4 +42,18 @@ export const useLogout = () => {
     }
 
     return logoutHandler;
+}
+
+export const useGetUserDetails = () => {
+    const [userDetails, setUserDetails] = useState({})
+
+    useEffect(() => {
+        (async () => {
+          const userData = await authAPI.getUserDetails();
+
+          setUserDetails(userData);
+        })()
+    }, [])
+
+    return userDetails;
 }

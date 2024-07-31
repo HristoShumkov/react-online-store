@@ -1,27 +1,31 @@
 import requester from "./requester";
 
-const BASE_URL = "http://localhost:3030/data/items";
+const BASE_URL = "http://localhost:3030/data";
 
-const getAllItems = async () => {
-    const response = await requester.get(BASE_URL);
+const getAllItems = async () => requester.get(`${BASE_URL}/items`);
 
-    const items = Object.values(response);
+const getSingleItem = async (itemId) => requester.get(`${BASE_URL}/items/${itemId}`)
 
-    return items;
-}
+const postItem = (itemData) => requester.post(`${BASE_URL}/items`, itemData);
 
-const getSingleItem = async (itemId) => requester.get(`${BASE_URL}/${itemId}`)
+const updateItem = (itemData, itemId) => requester.put(`${BASE_URL}/items/${itemId}`, itemData);
 
-const postItem = (itemData) => requester.post(BASE_URL, itemData);
+const deleteItem = (itemId) => requester.del(`${BASE_URL}/items/${itemId}`);
 
-const updateItem = (itemData, itemId) => requester.put(`${BASE_URL}/${itemId}`, itemData);
+const getCartItems = (userId) => requester.get(`${BASE_URL}/cart?where=user%3D%22${userId}%22`);
 
-const deleteItem = (itemId) => requester.del(`${BASE_URL}/${itemId}`);
+const getSingleCartItem = (userId, itemId) => requester.get(`${BASE_URL}/cart?where=user%3D%22${userId}%22%20AND%20item%3D%22${itemId}%22`);
+
+const addToCart = (userId, itemId) => requester.post(`${BASE_URL}/cart`, {user: userId, item: itemId});
+
 
 export default {
     getAllItems,
     getSingleItem,
     postItem,
     updateItem,
-    deleteItem
+    deleteItem,
+    getCartItems,
+    getSingleCartItem,
+    addToCart
 }

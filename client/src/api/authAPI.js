@@ -1,18 +1,28 @@
 import requester from "./requester";
 
-const BASE_URL = "http://localhost:3030/users"
+const AUTH_URL = "http://localhost:3030/users"
 
-const register = (email, username, password, profilePic) => requester.post(`${BASE_URL}/register`, {email, username, password, profilePic});
+const PUBLIC_USER_URL = "http://localhost:3030/data/users"
 
-const login = (email, password) => requester.post(`${BASE_URL}/login`, {email, password});
+const register = (email, username, password, profilePic) => requester.post(`${AUTH_URL}/register`, {email, username, password, profilePic});
 
-const logout = () => requester.get(`${BASE_URL}/logout`);
+const login = (email, password) => requester.post(`${AUTH_URL}/login`, {email, password});
 
-const getUser = () => {}
+const logout = () => requester.get(`${AUTH_URL}/logout`);
+
+const getUserDetails = () => requester.get(`${AUTH_URL}/me`);
+
+const postPublicUserRecord = (userData) => requester.post(PUBLIC_USER_URL, userData);
+
+const getPublicUserRecord = (userId) => requester.get(`${PUBLIC_USER_URL}/${userId}`);
+
 
 
 export default {
     login,
     register,
-    logout
+    logout,
+    getUserDetails,
+    postPublicUserRecord,
+    getPublicUserRecord
 }

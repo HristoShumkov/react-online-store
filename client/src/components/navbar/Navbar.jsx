@@ -22,7 +22,7 @@ export default function Navbar() {
             {(toggle && isAuthenticated) && (
               <ul className='option-container'>
                 <Link to='/user' style={{ textDecoration: 'none' }}><li className='button-secondary'>My Profile</li></Link>
-                <Link to='/watchlist' style={{ textDecoration: 'none' }}><li className='button-secondary'>My Cart</li></Link>
+                <Link to='/my-cart' style={{ textDecoration: 'none' }}><li className='button-secondary'>My Cart</li></Link>
                 <Link to='/sell-item' style={{ textDecoration: 'none' }}><li className='button-secondary'>Sell Item</li></Link>
                 <div className='divider'></div>
                 <Link to="/logout"><li className='button-secondary'>Logout</li></Link>

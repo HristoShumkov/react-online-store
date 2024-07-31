@@ -1,7 +1,8 @@
-import { createContext, useContext } from "react";
+import { createContext, useContext, useState } from "react";
 
 import { useGetSingleItem } from "../hooks/useItems"
 import usePersistedState from "../hooks/usePersistedState";
+import itemAPI from "../api/itemAPI";
 
 const AuthContext = createContext({
     userId: "",
@@ -26,22 +27,29 @@ export function AuthContextProvider(props) {
         setAuthState(null);
     }
 
+    const isOwner = (id) => {
+        return id === authState._id
+    }
 
-    const isOwner = (itemId) => {
+    const isItemOwner = (itemId) => {
         const [item] = useGetSingleItem(itemId);
 
-        return item._ownerId === authState._id;
+        return isOwner(item._ownerId);
     }
+
+    
 
     const contextData = {
         userId: authState?._id,
         email: authState?.email,
         profilePic: authState?.profilePic,
+        createdOn: authState?._createdOn,
         accessToken: authState?.accessToken,
         isAuthenticated: !!authState?.email,
         changeAuthState,
         localLogout,
-        isOwner
+        isOwner,
+        isItemOwner
     }
 
     return (
