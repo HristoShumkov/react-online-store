@@ -2,6 +2,34 @@ import { FaComputer, FaDumbbell, FaFilm, FaHouse, FaShirt } from "react-icons/fa
 import Category from "./category/Category";
 import "./home.css";
 
+const categoryData = [
+    {
+        icon: <FaShirt />,
+        name: "Clothing",
+        link: "/clothing"
+    },
+    {
+        icon: <FaComputer />,
+        name: "Electronics",
+        link: "/electronics"
+    },
+    {
+        icon: <FaFilm />,
+        name: "Entertainment",
+        link: "/entertainment"
+    },
+    {
+        icon: <FaHouse />,
+        name: "Home & Garden",
+        link: "/home-and-garden"
+    },
+    {
+        icon: <FaDumbbell />,
+        name: "Sports",
+        link: "/sports"
+    }
+]
+
 export default function Home() {
 
     return (
@@ -16,11 +44,7 @@ export default function Home() {
             <section id="shop-now">
                 <h1>Shop By Category</h1>
                 <section id="category-container">
-                    <Category icon={<FaShirt />}/>
-                    <Category icon={<FaComputer />}/>
-                    <Category icon={<FaFilm />} />
-                    <Category icon={<FaHouse />}/>
-                    <Category icon={<FaDumbbell />}/>
+                    {categoryData.map(x => <Category key={x.name} icon={x.icon} name={x.name} link={x.link} />)}
                 </section>
             </section>
         </>

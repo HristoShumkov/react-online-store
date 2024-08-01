@@ -3,17 +3,56 @@ import itemAPI from "../api/itemAPI";
 import { useNavigate } from "react-router-dom";
 import { useAuthContext } from "../contexts/AuthContext";
 
-export function useGetAllItems() {
+// export function useGetAllItems() {
+//     const [items, setItems] = useState([]);
+//     useEffect(() => {
+//         (async () => {
+//             const itemData = await itemAPI.getAllItems();
+
+//             setItems(itemData);
+//         })();
+//     }, []);
+
+//     return [items, setItems];
+// }
+
+export function useGetItemsByCategory(category) {
     const [items, setItems] = useState([]);
     useEffect(() => {
         (async () => {
-            const itemData = await itemAPI.getAllItems();
+            let itemData = null;
+            
+            if (category === "all") {
+                itemData = await itemAPI.getAllItems();
+            } else {
+                let categoryLink = "";
+
+                switch (category) {
+                    case "clothing":
+                        categoryLink = "Clothing"
+                        break
+                    case "electronics":
+                        categoryLink = "Electronics"
+                        break
+                    case "entertainment":
+                        categoryLink = "Entertainment"
+                        break
+                    case "home-and-garden":
+                        categoryLink = "Home%20%26%20Garden"
+                        break
+                    case "sports":
+                        categoryLink = "Sports"
+                        break
+                }
+                
+                itemData = await itemAPI.getItemsByCategory(categoryLink);
+            }
 
             setItems(itemData);
         })();
-    }, []);
+    }, [category]);
 
-    return [items, setItems]
+    return [items, setItems];
 }
 
 export function useGetSingleItem(itemId) {
@@ -51,9 +90,9 @@ export function useDeleteItem() {
         if (confirm("Are you sure you wish to delete this Item?")) {
             itemAPI.deleteItem(itemId);
 
-            navigate("/items")
+            navigate("/items");
         } else {
-            return
+            return;
         }
     }
 
@@ -64,17 +103,17 @@ export const useIsInCart = (itemId) => {
     const [inCart, setInCart] = useState(false);
     const { userId } = useAuthContext();
 
-    
+
     useEffect(() => {
-            const checkItemInCart = async (itemId) => {
-                const result = await itemAPI.getSingleCartItem(userId, itemId);
+        const checkItemInCart = async (itemId) => {
+            const result = await itemAPI.getSingleCartItem(userId, itemId);
 
-                if (result.length) {
-                    setInCart(true);
-                }
+            if (result.length) {
+                setInCart(true);
             }
+        }
 
-            checkItemInCart(itemId)
+        checkItemInCart(itemId);
     }, [inCart])
 
     return [inCart, setInCart];

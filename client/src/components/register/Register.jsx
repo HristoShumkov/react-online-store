@@ -57,7 +57,7 @@ export default function Register() {
           </div>
           <input type='submit' value='Sign up' className='button-main button-submit' />
         </form>
-        <div className='divider'></div>
+        <div className='divider' />
         <p style={{ textAlign: 'center' }}>Already have an account? <Link to='/login' id='to-login'>Sign in.</Link></p>
       </div>
     </div>

@@ -28,8 +28,8 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
           <Route path="/logout" element={<Logout />}/>
-          <Route path="/items" element={<ItemCatalog />} />
-          <Route path="/items/:itemId" element={<ItemDetails />} />
+          <Route path="/items/:category" element={<ItemCatalog />} />
+          <Route path="/items/view/:itemId" element={<ItemDetails />} />
           <Route path="/user" element={<UserDetails />} />
           <Route path="/my-cart" element={<UserCart />} />
           <Route path="/bought" element={<BoughtItems />} />

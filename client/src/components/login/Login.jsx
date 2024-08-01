@@ -40,7 +40,7 @@ export default function Login() {
           </div>
           <input type='submit' value='Login' className='button-main button-submit' />
         </form>
-        <div className='divider'></div>
+        <div className='divider' />
         <Link to='/register'><button className='button-secondary button-submit'>Create New Account</button></Link>
       </div>
     </div>

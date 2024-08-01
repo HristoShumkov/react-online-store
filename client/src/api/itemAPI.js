@@ -4,6 +4,8 @@ const BASE_URL = "http://localhost:3030/data";
 
 const getAllItems = async () => requester.get(`${BASE_URL}/items`);
 
+const getItemsByCategory = async (category) => requester.get(`${BASE_URL}/items?where=category%3D%22${category}%22`);
+
 const getSingleItem = async (itemId) => requester.get(`${BASE_URL}/items/${itemId}`)
 
 const postItem = (itemData) => requester.post(`${BASE_URL}/items`, itemData);
@@ -21,6 +23,7 @@ const addToCart = (userId, itemId) => requester.post(`${BASE_URL}/cart`, {user: 
 
 export default {
     getAllItems,
+    getItemsByCategory,
     getSingleItem,
     postItem,
     updateItem,
