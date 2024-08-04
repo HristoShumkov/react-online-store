@@ -1,4 +1,6 @@
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+
 import { usePostItem } from "../../hooks/useItems";
 import { useForm } from "../../hooks/useForm";
 
@@ -13,14 +15,25 @@ const initialValues = {
 }
 
 export default function SellItem() {
+    const [errors, setErrors] = useState({
+        title: "",
+        price: "",
+        category: "",
+        description: "",
+    })
     const postItem = usePostItem();
     const navigate = useNavigate();
 
     const postItemHandler = async (values) => {
-        try {
-            await postItem(values);
+        if (!values.imageUrl) {
+            values.imageUrl = "/placeholder-image.png";
+        }
 
-            navigate("/items"); 1
+        try {
+            const { _id: itemId } = await postItem(values);
+
+
+            navigate(`/items/view/${itemId}`);
         } catch (err) {
             console.error(err.message)
         }

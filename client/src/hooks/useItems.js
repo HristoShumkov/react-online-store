@@ -3,19 +3,6 @@ import itemAPI from "../api/itemAPI";
 import { useNavigate } from "react-router-dom";
 import { useAuthContext } from "../contexts/AuthContext";
 
-// export function useGetAllItems() {
-//     const [items, setItems] = useState([]);
-//     useEffect(() => {
-//         (async () => {
-//             const itemData = await itemAPI.getAllItems();
-
-//             setItems(itemData);
-//         })();
-//     }, []);
-
-//     return [items, setItems];
-// }
-
 export function useGetItemsByCategory(category) {
     const [items, setItems] = useState([]);
     useEffect(() => {
@@ -90,7 +77,7 @@ export function useDeleteItem() {
         if (confirm("Are you sure you wish to delete this Item?")) {
             itemAPI.deleteItem(itemId);
 
-            navigate("/items");
+            navigate("/items/all");
         } else {
             return;
         }

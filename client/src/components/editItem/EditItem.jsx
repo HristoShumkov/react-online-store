@@ -1,7 +1,6 @@
 import { Link, useNavigate, useParams } from "react-router-dom";
 import { useGetSingleItem, useUpdateItem } from "../../hooks/useItems";
 import { useForm } from "../../hooks/useForm";
-import { useEffect } from "react";
 
 
 export default function EditItem() {
@@ -15,7 +14,7 @@ export default function EditItem() {
         try {
             await updateItem(values, itemId);
 
-            navigate(`/items/${itemId}`); 1
+            navigate(`/items/view/${itemId}`); 1
         } catch (err) {
             console.error(err.message)
         }
@@ -59,7 +58,7 @@ export default function EditItem() {
                     </div>
                     <div id="button-container" style={{display: "flex"}}>
                         <input type="submit" value="Submit" className="button-main button-submit" />
-                        <Link to={`/items/${itemId}`} className="button-secondary button-submit">Cancel</Link>
+                        <Link to={`/items/view/${itemId}`} className="button-secondary button-submit">Cancel</Link>
                     </div>
                 </form>
             </div>

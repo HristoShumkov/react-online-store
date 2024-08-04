@@ -2,7 +2,6 @@ import { createContext, useContext, useState } from "react";
 
 import { useGetSingleItem } from "../hooks/useItems"
 import usePersistedState from "../hooks/usePersistedState";
-import itemAPI from "../api/itemAPI";
 
 const AuthContext = createContext({
     userId: "",

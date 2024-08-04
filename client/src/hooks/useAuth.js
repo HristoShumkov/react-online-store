@@ -20,6 +20,10 @@ export const useRegister = () => {
     const { changeAuthState } = useAuthContext();
 
     const registerHandler = async (email, username, password, profilePic) => {
+        if (!profilePic) {
+            profilePic = "/default-profile-picture.png";
+        }
+
         const { password: _, ...authData } = await authAPI.register(email, username, password, profilePic);
 
         changeAuthState(authData);
