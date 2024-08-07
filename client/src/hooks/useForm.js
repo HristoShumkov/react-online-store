@@ -15,12 +15,12 @@ export function useForm(initialValues, submitCallback) {
 
         submitCallback(values);
 
-        setValues(initialValues);
+        setValues(values);
     }
 
     const populateForm = (data) => {
         useEffect(() => {
-            setValues({ ...data })
+            setValues({ ...data, imageUrl: data.imageUrl !== "/placeholder-image.png" ? data.imageUrl : "" })
         }, [data])
     }
     

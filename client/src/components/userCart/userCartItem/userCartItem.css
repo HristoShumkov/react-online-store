@@ -1,0 +1,33 @@
+.cart-item {
+    display: flex;
+    align-items: start;
+    margin: 10px 0;
+    position: relative;
+}
+
+.cart-item-image {
+    width: 180px;
+    height: 180px;
+    object-fit: contain;
+    margin-right: 10px;
+}
+
+.cart-item-title {
+    flex-grow: 1;
+    text-align: start;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.cart-item-actions {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+.cart-item-price {
+    text-align: right;
+    width: 100px;
+    font-size: 20px;
+    font-weight: bold;
+}

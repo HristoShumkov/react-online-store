@@ -1,0 +1,24 @@
+.cart-container {
+    width: 80%;
+    margin: auto;
+    border: 1px solid #ccc;
+    padding: 20px;
+}
+
+.cart-title {
+    font-size: 24px;
+    font-weight: bold;
+    text-align: start;
+}
+
+.price {
+    text-align: right;
+    font-size: 18px;
+    margin-top: 10px;
+}
+
+.subtotal {
+    text-align: right;
+    font-size: 18px;
+    margin-top: 10px;
+}

@@ -14,8 +14,11 @@ import BoughtItems from './components/boughtItems/BoughtItems';
 import SellItem from './components/sellItem/SellItem';
 import EditItem from './components/editItem/EditItem';
 
-import './App.css';
 import { AuthContextProvider } from './contexts/AuthContext';
+import PrivateGuard from './common/PrivateGuard';
+import OwnerGuard from './common/OwnerGuard';
+
+import './App.css';
 
 function App() {
 
@@ -27,15 +30,19 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
-          <Route path="/logout" element={<Logout />}/>
+          <Route path="/logout" element={<Logout />} />
           <Route path="/items/:category" element={<ItemCatalog />} />
           <Route path="/items/view/:itemId" element={<ItemDetails />} />
-          <Route path="/user" element={<UserDetails />} />
-          <Route path="/my-cart" element={<UserCart />} />
-          <Route path="/bought" element={<BoughtItems />} />
-          <Route path="/sell-item" element={<SellItem />} />
-          <Route path="/edit/:itemId" element={<EditItem />} />
           <Route path="*" element={<NotFound />} />
+          <Route element={<PrivateGuard />}>
+            <Route path="/user" element={<UserDetails />} />
+            <Route path="/my-cart" element={<UserCart />} />
+            <Route path="/bought" element={<BoughtItems />} />
+            <Route path="/sell-item" element={<SellItem />} />
+          </Route>
+          <Route element={<OwnerGuard />}>
+            <Route path="/edit/:itemId" element={<EditItem />} />
+          </Route>
         </Routes>
       </div>
     </AuthContextProvider>

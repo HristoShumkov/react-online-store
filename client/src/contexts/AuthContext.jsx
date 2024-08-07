@@ -30,14 +30,6 @@ export function AuthContextProvider(props) {
         return id === authState._id
     }
 
-    const isItemOwner = (itemId) => {
-        const [item] = useGetSingleItem(itemId);
-
-        return isOwner(item._ownerId);
-    }
-
-    
-
     const contextData = {
         userId: authState?._id,
         email: authState?.email,
@@ -47,8 +39,7 @@ export function AuthContextProvider(props) {
         isAuthenticated: !!authState?.email,
         changeAuthState,
         localLogout,
-        isOwner,
-        isItemOwner
+        isOwner
     }
 
     return (

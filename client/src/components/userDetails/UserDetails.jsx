@@ -15,10 +15,13 @@ export default function UserDetails() {
 
     return (
 
-        <>
-            <img src={userDetails.profilePic} style={{ maxHeight: "200px" }} />
-            <h1>{userDetails.username}</h1>
-            <h1>Created on: {parseDate(createdOn)}</h1>
+        <div id="user-details-container">
+            <div id="user-info">
+                <img src={userDetails.profilePic} id="user-details-profile-pic" />
+                <h1>{userDetails.username}</h1>
+                <h1>Created on: {parseDate(createdOn)}</h1>
+            </div>
+            <div id="user-cart-container">
             <div id='user-cart-header'>
                 <h2>My Cart</h2>
                 <Link to='/my-cart' id='view-more'>View more</Link>
@@ -27,15 +30,14 @@ export default function UserDetails() {
                 {cartItems.length
                     ? cartItems.map(cartItem => (
                         <>
-                        <ItemPreview key={cartItem._id} title={cartItem.title} price={cartItem.price} image={cartItem.imageUrl} _id={cartItem._id} />
+                            <ItemPreview key={cartItem._id} title={cartItem.title} price={cartItem.price} image={cartItem.imageUrl} _id={cartItem._id} />
                         </>
-                    )) 
-                    : <p>No Items Yet</p>
+                    ))
+                    : <p id="no-items">No Items Yet</p>
                 }
-
-
             </div>
-        </>
+            </div>
+        </div>
     )
 
 }

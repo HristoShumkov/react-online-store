@@ -8,7 +8,7 @@ import "./itemDetails.css"
 export default function ItemDetails() {
     const { itemId } = useParams();
     const [item] = useGetSingleItem(itemId);
-    const { isItemOwner, isAuthenticated } = useAuthContext();
+    const { isOwner, isAuthenticated } = useAuthContext();
 
     const deleteItem = useDeleteItem();
     const addToCart = useAddToCart();
@@ -16,30 +16,37 @@ export default function ItemDetails() {
     const [isInCart, setIsInCart] = useIsInCart(itemId);
 
     return (
-        <>
-            <img src={item.imageUrl} />
-            <h1>{item.title}</h1>
-            <p>{item.category}</p>
-            <p>${item.price}</p>
-            <p>{item.description}</p>
-            {isAuthenticated && (
-                <div>
-                    {isItemOwner(itemId) ? (
-                        <>
-                            <button onClick={async () => await deleteItem(itemId)} className="button-secondary">Delete</button>
-                            <Link to={`/edit/${itemId}`} className="button-main">Edit</Link>
-                        </>
-                    ) : (
-                        isInCart 
-                            ? <Link to="/my-cart" className="button-secondary">Check Item in Cart</Link>
-                            : <button className="button-secondary" onClick={() => {
-                                addToCart(itemId);
-                                setIsInCart(true);
-                            }}><FaShoppingCart /> Add to Cart</button>
-                    )}
+        <div id="item-details">
+            <div className="container-half">
+                <div id="image-container">
+                    <img src={item.imageUrl} alt={item.title} id="item-image" />
                 </div>
-            )}
-        </>
+                <h1 id="item-title">{item.title}</h1>
+            </div>
+            <div className="container-half">
+                    <p id="item-category">Category: {item.category}</p>
+                    <p id="item-price">${item.price}</p>
+                {isAuthenticated && (
+                    <div id="button-container">
+                        {isOwner(item._ownerId) ? (
+                            <>
+                                <button onClick={async () => await deleteItem(item._id)} className="button-secondary">Delete</button>
+                                <Link to={`/edit/${item._id}`} className="button-main">Edit</Link>
+                            </>
+                        ) : (
+                            isInCart
+                                ? <Link to="/my-cart" className="button-secondary">Check Item in Cart</Link>
+                                : <button className="button-secondary" onClick={() => {
+                                    addToCart(item._id);
+                                    setIsInCart(true);
+                                }}><FaShoppingCart /> Add to Cart</button>
+                        )}
+                    </div>
+                )}
+                <div className="divider"></div>
+                <p id="item-description">{item.description}</p>
+            </div>
+        </div>
     )
 
 }

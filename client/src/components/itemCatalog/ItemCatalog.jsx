@@ -18,7 +18,6 @@ export default function ItemCatalog() {
                 <Link to="/items/home-and-garden" className="button-secondary">Home & Garden</Link>
                 <Link to="/items/sports" className="button-secondary">Sports</Link>
                 <Link to="/items/all" className="button-secondary">All</Link>
-                <Link to="2" className="button-secondary">try me</Link>
             </div>
             <div className="divider" />
             <div id="items-list">

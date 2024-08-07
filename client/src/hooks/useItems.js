@@ -8,7 +8,7 @@ export function useGetItemsByCategory(category) {
     useEffect(() => {
         (async () => {
             let itemData = null;
-            
+
             if (category === "all") {
                 itemData = await itemAPI.getAllItems();
             } else {
@@ -31,7 +31,7 @@ export function useGetItemsByCategory(category) {
                         categoryLink = "Sports"
                         break
                 }
-                
+
                 itemData = await itemAPI.getItemsByCategory(categoryLink);
             }
 
@@ -47,11 +47,11 @@ export function useGetSingleItem(itemId) {
 
     useEffect(() => {
         (async () => {
-            const itemData = await itemAPI.getSingleItem(itemId)
+                const itemData = await itemAPI.getSingleItem(itemId);
 
-            setItem(itemData)
-        }
-        )()
+                    setItem(itemData);
+                }
+        )();
     }
         , [itemId])
 
@@ -114,9 +114,7 @@ export function useGetCartItems() {
     useEffect(() => {
         (async () => {
             const itemData = await itemAPI.getCartItems(userId);
-
-            console.log(itemData)
-
+            
             const cartItems = []
 
             for (const item of itemData) {
