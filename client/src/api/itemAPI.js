@@ -20,6 +20,8 @@ const getSingleCartItem = (userId, itemId) => requester.get(`${BASE_URL}/cart?wh
 
 const addToCart = (userId, itemId) => requester.post(`${BASE_URL}/cart`, {user: userId, item: itemId});
 
+const removeFromCart = (itemId) => requester.del(`${BASE_URL}/cart/${itemId}`);
+
 
 export default {
     getAllItems,
@@ -30,5 +32,6 @@ export default {
     deleteItem,
     getCartItems,
     getSingleCartItem,
-    addToCart
+    addToCart,
+    removeFromCart
 }

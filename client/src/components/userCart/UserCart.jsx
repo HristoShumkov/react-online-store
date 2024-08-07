@@ -4,7 +4,7 @@ import "./userCart.css";
 import UserCartItem from "./userCartItem/UserCartItem";
 
 export default function UserCart() {
-    const [cartItems] = useGetCartItems();
+    const [cartItems, setCartItems] = useGetCartItems();
     const [subtotal, setSubtotal] = useState(0);
 
     useEffect(() => {
@@ -18,6 +18,12 @@ export default function UserCart() {
             }
             return item;
         });
+        updateSubtotal(updatedItems);
+    };
+
+    const removeItemHandler = (id) => {
+        const updatedItems = cartItems.filter(item => item._id !== id);
+        setCartItems(updatedItems);
         updateSubtotal(updatedItems);
     };
 
@@ -43,8 +49,9 @@ export default function UserCart() {
                         _id={cartItem._id}
                         checked={cartItem.checked || false}
                         onCheckboxChange={handleCheckboxChange}
+                        onRemoveItem={removeItemHandler}
                     />
-                    <div className="divider" key={`divider${cartItem._id}`}/>
+                    <div className="divider" key={`divider${cartItem._id}`} />
                 </>)
                 : <h1>No cart items</h1>
             }

@@ -114,7 +114,7 @@ export function useGetCartItems() {
     useEffect(() => {
         (async () => {
             const itemData = await itemAPI.getCartItems(userId);
-            
+
             const cartItems = []
 
             for (const item of itemData) {
@@ -138,4 +138,16 @@ export function useAddToCart() {
     }
 
     return addToCartHandler;
+}
+
+export function useRemoveFromCart() {
+    const { userId } = useAuthContext();
+    
+    const removefromCartHandler = async (itemId) => {
+        const [itemData] = await itemAPI.getSingleCartItem(userId, itemId)
+
+        await itemAPI.removeFromCart(itemData._id)
+    }
+
+    return removefromCartHandler
 }
